@@ -1,0 +1,11 @@
+##Valid
+curl -d "{""number"":""59263303996"",""pin"":""1234""}" -H "Content-Type: application/json" -X POST http://localhost:9090/getbalance
+
+##Неверный пин
+curl -d "{""number"":""59263303996"",""pin"":""123""}" -H "Content-Type: application/json" -X POST http://localhost:9090/getbalance
+
+##Карты не существует
+curl -d "{""number"":""59263303555"",""pin"":""1234""}" -H "Content-Type: application/json" -X POST http://localhost:9090/getbalance
+
+##Карта просрочена
+curl -d "{""number"":""58965251551"",""pin"":""1663""}" -H "Content-Type: application/json" -X POST http://localhost:9090/getbalance
