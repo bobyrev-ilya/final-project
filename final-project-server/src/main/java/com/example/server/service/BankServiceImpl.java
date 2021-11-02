@@ -3,13 +3,13 @@ package com.example.server.service;
 import com.example.server.exception.ExpiredCardException;
 import com.example.server.exception.FailedPinAuthenticationException;
 import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @AllArgsConstructor
-@Component
+@Service
 public class BankServiceImpl implements BankService {
 
     private final CardService cardService;

@@ -1,10 +1,10 @@
 package com.example.server.service;
 
 
-import com.example.atm.dto.Account;
-import com.example.atm.dto.Card;
+import com.example.server.entity.Account;
+import com.example.server.entity.Card;
 import com.example.server.exception.CardNotFoundException;
-import com.example.server.repository.CardRepository;
+import com.example.server.repository.CardCrudRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,20 +15,20 @@ import java.util.Optional;
 @AllArgsConstructor
 public class CardService {
 
-    private final CardRepository cardRepository;
+    private final CardCrudRepository cardRepository;
 
     public String getPinCodeByNumber(String cardNumber) {
-        return this.getCard(cardRepository.getCardByNumber(cardNumber))
+        return getCard(cardRepository.getCardByNumber(cardNumber))
                 .getPin();
     }
 
     public Account getAccount(String cardNumber) {
-        return this.getCard(cardRepository.getCardByNumber(cardNumber))
+        return getCard(cardRepository.getCardByNumber(cardNumber))
                 .getAccount();
     }
 
     public LocalDate getExpireDate(String cardNumber) {
-        return this.getCard(cardRepository.getCardByNumber(cardNumber))
+        return getCard(cardRepository.getCardByNumber(cardNumber))
                 .getExpireDate();
     }
 
