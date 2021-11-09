@@ -21,6 +21,11 @@ spring:
       enabled: true
       path: /h2
 
+  logging:
+      level:
+        root: DEBUG
+        org.springframework.security: DEBUG
+
 
 
 
